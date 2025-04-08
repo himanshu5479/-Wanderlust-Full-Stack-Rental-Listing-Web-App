@@ -1,50 +1,67 @@
 <style>
-  .btn-search{
-    margin-right: 20rem;
-    background-color:  rgb(204, 73, 73);
+  .btn-search {
+    background-color: rgb(204, 73, 73);
     color: #fff;
     border-radius: 25px;
-    padding: 0 1rem 0 1rem;
+    padding: 0 1rem;
   }
-  .btn-search:hover{
+
+  .btn-search:hover {
     background-color: rgb(204, 73, 73);
   }
+
   .btn-search i {
-    display: inline;
     margin-right: 0.5rem;
-     
   }
-  .search-inp
-  {
+
+  .search-inp {
     border-radius: 25px;
-    padding: 0.5rem 3rem 0.5rem 3rem;
-    font-size: 0.8rem;
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .search-form {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+
+    .btn-search {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+
+    .navbar-nav {
+      text-align: center;
+    }
   }
 </style>
 
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="/listings"><i class="fa-solid fa-compass"></i></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <!-- Left nav links -->
-      <div class="navbar-nav">
-        <a class="nav-link" href="/"><i class="fa-solid fa-house"></i></a> 
+      <div class="navbar-nav me-auto mb-2 mb-md-0">
+        <a class="nav-link" href="/"><i class="fa-solid fa-house"></i></a>
         <a class="nav-link" href="/listings">Explore</a>
+        <a class="nav-link" href="/listings/new">Wanderlust your home</a>
       </div>
 
-      <!-- Search form aligned to the right -->
-      <form class="d-flex mx-auto me-3 " role="search">
-        <input class="form-control me-2 search-inp" type="search" placeholder="Search Destinations" aria-label="Search">
+      <!-- Search form -->
+      <form class="d-flex search-form mx-md-auto mb-2 mb-md-0" role="search">
+        <input class="form-control search-inp me-2" type="search" placeholder="Search Destinations" aria-label="Search">
         <button class="btn btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
       </form>
 
       <!-- Right nav links -->
-      <div class="navbar-nav">
-        <a class="nav-link" href="/listings/new">Wanderlust your home</a>
+      <div class="navbar-nav ms-auto">
         <% if (!currUser) { %>
           <a class="nav-link active" href="/signup"><b>Sign Up</b></a>
           <a class="nav-link" href="/login"><b>Log in</b></a>
