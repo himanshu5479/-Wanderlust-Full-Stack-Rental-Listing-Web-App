@@ -5,71 +5,86 @@
     border-radius: 25px;
     padding: 0 1rem;
   }
-
   .btn-search:hover {
     background-color: rgb(204, 73, 73);
   }
-
   .btn-search i {
     margin-right: 0.5rem;
   }
-
   .search-inp {
     border-radius: 25px;
     padding: 0.5rem 1.5rem;
     font-size: 0.9rem;
     width: 100%;
   }
-
+  /* Optional: Adjust search-wrapper on small screens */
   @media (max-width: 768px) {
-    .search-form {
+    .search-wrapper {
       width: 100%;
-      margin-top: 0.5rem;
+      margin: 0.5rem 1rem;
     }
-
-    .btn-search {
-      width: 100%;
-      margin-top: 0.5rem;
+    .navbar-collapse {
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-
-    .navbar-nav {
-      text-align: center;
+    .navbar-nav .nav-link {
+      padding: 0.5rem 1rem;
     }
   }
 </style>
 
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
   <div class="container-fluid">
+    <!-- Brand -->
     <a class="navbar-brand" href="/listings"><i class="fa-solid fa-compass"></i></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+
+    <!-- Toggler for mobile collapse -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+            aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <!-- Left nav links -->
-      <div class="navbar-nav me-auto mb-2 mb-md-0">
-        <a class="nav-link" href="/"><i class="fa-solid fa-house"></i></a>
-        <a class="nav-link" href="/listings">Explore</a>
-        <a class="nav-link" href="/listings/new">Wanderlust your home</a>
-      </div>
-
-      <!-- Search form -->
-      <form class="d-flex search-form mx-md-auto mb-2 mb-md-0" role="search">
+    <!-- Always visible search bar (outside the collapsible sidebar) -->
+    <div class="d-flex flex-grow-1 justify-content-center search-wrapper">
+      <form class="d-flex w-100" role="search">
         <input class="form-control search-inp me-2" type="search" placeholder="Search Destinations" aria-label="Search">
-        <button class="btn btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+        <button class="btn btn-search" type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>Search
+        </button>
       </form>
+    </div>
 
-      <!-- Right nav links -->
-      <div class="navbar-nav ms-auto">
+    <!-- Collapsible sidebar for nav links -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <a class="nav-link" href="/"><i class="fa-solid fa-house"></i> Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/listings">Explore</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/listings/new">Wanderlust your home</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav mb-2 mb-md-0">
         <% if (!currUser) { %>
-          <a class="nav-link active" href="/signup"><b>Sign Up</b></a>
-          <a class="nav-link" href="/login"><b>Log in</b></a>
+          <li class="nav-item">
+            <a class="nav-link" href="/signup"><strong>Sign Up</strong></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login"><strong>Log in</strong></a>
+          </li>
         <% } %>
         <% if (currUser) { %>
-          <a class="nav-link" href="/logout">Log out</a>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Log out</a>
+          </li>
         <% } %>
-      </div>
+      </ul>
     </div>
   </div>
 </nav>
