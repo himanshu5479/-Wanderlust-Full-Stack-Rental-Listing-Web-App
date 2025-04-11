@@ -3,32 +3,58 @@
     background-color: rgb(204, 73, 73);
     color: #fff;
     border-radius: 25px;
-    padding: 0 1rem;
+    padding: 0.6rem 1.2rem;
+    font-weight: 500;
+    border: none;
+    white-space: nowrap;
   }
+
   .btn-search:hover {
-    background-color: rgb(204, 73, 73);
+    background-color: rgb(180, 60, 60);
   }
+
   .btn-search i {
     margin-right: 0.5rem;
   }
+
   .search-inp {
     border-radius: 25px;
-    padding: 0.5rem 1.5rem;
-    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
     width: 100%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border: 1px solid #ccc;
   }
-  /* Optional: Adjust search-wrapper on small screens */
+
+  .search-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    max-width: 600px;
+    padding: 0 1rem;
+    margin: 0 auto;
+  }
+
+  /* Responsive fix for mobile */
   @media (max-width: 768px) {
-    .search-wrapper {
-      width: 100%;
-      margin: 0.5rem 1rem;
+    .search-wrapper form {
+      flex-direction: column;
+      gap: 0.5rem;
     }
+
+    .btn-search {
+      width: 100%;
+      text-align: center;
+    }
+
     .navbar-collapse {
       background-color: #f8f9fa;
       border-radius: 8px;
       padding: 1rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
+
     .navbar-nav .nav-link {
       padding: 0.5rem 1rem;
     }
@@ -38,17 +64,26 @@
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
   <div class="container-fluid">
     <!-- Brand -->
-    <a class="navbar-brand" href="/listings"><i class="fa-solid fa-compass"></i></a>
+    <a class="navbar-brand" href="/listings">
+      <i class="fa-solid fa-compass"></i>
+    </a>
 
-    <!-- Toggler for mobile collapse -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+    <!-- Toggler for mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Always visible search bar (outside the collapsible sidebar) -->
-    <div class="d-flex flex-grow-1 justify-content-center search-wrapper">
+    <!-- Home link -->
+    <div>
+      <a class="nav-link" href="/">
+        <i class="fa-solid fa-house"></i> 
+      </a>
+    </div>
+
+    <!-- Search bar (always visible and centered) -->
+    <div class="search-wrapper">
       <form class="d-flex w-100" role="search">
         <input class="form-control search-inp me-2" type="search" placeholder="Search Destinations" aria-label="Search">
         <button class="btn btn-search" type="submit">
@@ -57,12 +92,9 @@
       </form>
     </div>
 
-    <!-- Collapsible sidebar for nav links -->
+    <!-- Nav links (collapsible) -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-md-0">
-        <li class="nav-item">
-          <a class="nav-link" href="/"><i class="fa-solid fa-house"></i> Home</a>
-        </li>
         <li class="nav-item">
           <a class="nav-link" href="/listings">Explore</a>
         </li>
@@ -88,4 +120,3 @@
     </div>
   </div>
 </nav>
- 
