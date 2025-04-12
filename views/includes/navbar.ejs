@@ -28,7 +28,7 @@
 
   .search-wrapper {
     max-width: 500px;
-    margin: 0 auto;
+    margin: 350px;
     padding: 0 1rem;
     width: 100%;
   }
@@ -86,6 +86,9 @@
       padding: 0.6rem;
       font-weight: 500;
     }
+    .nav-link {
+    color: #dc3545 !important;
+}
 
     .search-icon-mobile {
       display: inline-block;
@@ -93,7 +96,7 @@
       background: none;
       border: none;
       color: #333;
-      margin-left: 1rem;
+      margin-left: 16rem;
     }
   }
 
@@ -143,17 +146,17 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto align-items-center">
         <li class="nav-item">
-          <a class="nav-link" href="/listings">Explore</a>
+          <a class="nav-link" href="/listings"><b>Explore</b></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/listings/new">Wanderlust your home</a>
+          <a class="nav-link" href="/listings/new"><b>Wanderlust your home</b></a>
         </li>
         <% if (!currUser) { %>
           <li class="nav-item">
-            <a class="nav-link" href="/signup"><strong>Sign Up</strong></a>
+            <a class="nav-link" href="/signup"><strong><b>Sign Up</b></strong></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/login"><strong>Log in</strong></a>
+            <a class="nav-link" href="/login"><strong><b>Log in</b></strong></a>
           </li>
         <% } %>
         <% if (currUser) { %>
