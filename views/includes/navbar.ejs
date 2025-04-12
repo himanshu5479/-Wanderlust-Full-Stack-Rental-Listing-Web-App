@@ -38,14 +38,34 @@
 
   /* Responsive fix for mobile */
   @media (max-width: 768px) {
+    .navbar .container-fluid {
+      flex-wrap: wrap;
+    }
+
+    .search-wrapper {
+      width: 100%;
+      padding: 0.5rem 1rem;
+      order: 3; /* places it below brand & toggler */
+    }
+
     .search-wrapper form {
-      flex-direction: column;
+      flex-direction: row;
+      flex-wrap: nowrap;
       gap: 0.5rem;
+      width: 100%;
+    }
+
+    .search-inp {
+      flex: 1;
+      min-width: 0;
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
     }
 
     .btn-search {
-      width: 100%;
-      text-align: center;
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+      white-space: nowrap;
     }
 
     .navbar-collapse {
@@ -53,29 +73,33 @@
       border-radius: 8px;
       padding: 1rem;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
     }
 
     .navbar-nav .nav-link {
       padding: 0.5rem 1rem;
     }
 
-    .search-wrapper {
-      max-width: 100%;
-      padding: 0.5rem 1rem;
-    }
-
-    .search-inp {
-      width: 100%;
+    .navbar-toggler {
+      margin-left: auto;
     }
   }
 </style>
 
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
-  <div class="container-fluid">
+  <div class="container-fluid d-flex align-items-center">
+    
     <!-- Brand -->
     <a class="navbar-brand" href="/listings">
       <i class="fa-solid fa-compass"></i>
     </a>
+
+    <!-- Toggler for mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
     <!-- Home link -->
     <div>
@@ -84,7 +108,7 @@
       </a>
     </div>
 
-    <!-- Search bar (outside of collapsible menu and always visible) -->
+    <!-- Search bar (responsive & centered) -->
     <div class="search-wrapper">
       <form class="d-flex w-100" role="search">
         <input class="form-control search-inp me-2" type="search" placeholder="Search Destinations" aria-label="Search">
@@ -94,14 +118,7 @@
       </form>
     </div>
 
-    <!-- Toggler for mobile -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- Nav links (collapsible sidebar) -->
+    <!-- Nav links (collapsible) -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-md-0">
         <li class="nav-item">
