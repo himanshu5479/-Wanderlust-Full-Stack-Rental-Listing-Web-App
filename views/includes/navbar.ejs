@@ -38,6 +38,12 @@
     align-items: center;
     gap: 0.5rem;
   }
+  .navbar-actions {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
 
   /* Mobile-specific styling */
   @media (max-width: 768px) {
@@ -119,7 +125,7 @@
     <a class="navbar-brand" href="/listings">
       <i class="fa-solid fa-compass"></i>
     </a>
-
+<div class="navbar-actions">
     <!-- Search Icon for Mobile -->
     <button class="search-icon-mobile" id="toggleSearch">
       <i class="fa-solid fa-magnifying-glass"></i>
@@ -131,7 +137,7 @@
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
+  </div>
     <!-- Search Bar -->
     <div class="search-wrapper">
       <form class="search-form" role="search" id="searchForm">
