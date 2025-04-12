@@ -58,6 +58,15 @@
     .navbar-nav .nav-link {
       padding: 0.5rem 1rem;
     }
+
+    .search-wrapper {
+      max-width: 100%;
+      padding: 0.5rem 1rem;
+    }
+
+    .search-inp {
+      width: 100%;
+    }
   }
 </style>
 
@@ -68,13 +77,6 @@
       <i class="fa-solid fa-compass"></i>
     </a>
 
-    <!-- Toggler for mobile -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
     <!-- Home link -->
     <div>
       <a class="nav-link" href="/">
@@ -82,7 +84,7 @@
       </a>
     </div>
 
-    <!-- Search bar (always visible and centered) -->
+    <!-- Search bar (outside of collapsible menu and always visible) -->
     <div class="search-wrapper">
       <form class="d-flex w-100" role="search">
         <input class="form-control search-inp me-2" type="search" placeholder="Search Destinations" aria-label="Search">
@@ -92,7 +94,14 @@
       </form>
     </div>
 
-    <!-- Nav links (collapsible) -->
+    <!-- Toggler for mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Nav links (collapsible sidebar) -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-md-0">
         <li class="nav-item">
